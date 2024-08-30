@@ -1,14 +1,12 @@
-
-import './App.css'
+import "./App.css";
+import Posts from "./components/Posts/Posts";
 
 function App() {
- 
-
   return (
     <>
-      <div className=' text-bold text-rose-400 bg-yellow-300'> hello</div>
+      <Posts />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
