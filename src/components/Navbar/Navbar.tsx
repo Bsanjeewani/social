@@ -8,7 +8,7 @@ import {
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="flex items-center justify-between p-4 bg-black">
+    <nav className="flex items-center w-full justify-between px-8 pt-4 bg-black">
       {/* Left Logo with Hat Overlay */}
       <div className="relative flex items-center ">
         <img src={SOCONLogo} alt="SOCON Logo" className="h-6" />
@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Right Icons */}
-      <div className="flex-1 flex justify-end gap-4">
+      <div className="flex gap-4">
         <div>
           <img src={MessageLogo} alt="Messages" className="h-8" />
         </div>

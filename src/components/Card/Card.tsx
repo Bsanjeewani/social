@@ -19,21 +19,22 @@ const Card = ({ posts }) => {
     console.log("p id", postId);
 
     setVisibleLikesPostId(visibleLikesPostId === postId ? null : postId);
+    setVisibleCommentsPostId(null);
   };
 
   const toggleComments = (postId) => {
     setVisibleCommentsPostId(visibleCommentsPostId === postId ? null : postId);
+    setVisibleLikesPostId(null);
   };
 
   return (
     <>
-      <div className=" pt-6  text-white  w-full  rounded-xl  text-gray-700  ">
+      <div className=" p-6  text-white  w-full  rounded-xl  text-gray-700  ">
         {/* Auther */}
         <div className=" gap-9 flex flex-wrap">
           {posts &&
             posts.map((post) => (
               <div className="bg-black w-[100%] md:w-[45%] lg:w-[30%] rounded-md pt-4 border-2 border-purple-500 shadow-purple">
-
                 <div className="flex   justify-between mx-4">
                   <div className="flex items-center gap-4">
                     <div>

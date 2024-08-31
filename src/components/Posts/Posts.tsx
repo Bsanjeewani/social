@@ -25,8 +25,7 @@ const Posts = () => {
   }, [postStatus, dispatch]);
 
   return (
-    <div>
-      <h3>POSTS</h3>
+    <div className="mt-4">
       <Card posts={posts} />
     </div>
   );
