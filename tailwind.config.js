@@ -6,15 +6,12 @@ export default {
   ],
   theme: {
     colors: {
-   
       black: "#110E18",
-      white:"#FCFCFC",
+      white: "#FCFCFC",
       purple: "#6E44FF",
-      orange:"#FF8600",
-      
-      
+      orange: "#FF8600",
+      violet: "#2F2C38",
     },
-
     fontSize: {
       "2xl": "5rem",
       xl: "48px", // 48px
@@ -23,7 +20,7 @@ export default {
       md: "18px", // 18px
       "md-1": "14px", // 16px
       sm: "12px", // 12px
-      xsm:"10px",//10px
+      xsm: "10px", // 10px
     },
     fontWeight: {
       thin: "100",
@@ -36,8 +33,8 @@ export default {
     boxShadow: {
       md: `0px 0px 10px rgba(0, 0, 0, 0.1)`,
       "md-1": `0px 4px 10px 0px #6764641F`,
+      purple: `0px 4px 6px rgba(110, 68, 255, 0.3), 0px 1px 3px rgba(110, 68, 255, 0.3)`,
     },
-
     screens: {
       sm: "640px",
       md: "768px",
@@ -47,7 +44,6 @@ export default {
       "3xl": "1672px",
       "4xl": "1824px",
     },
-
     extend: {
       width: {
         "full-0.9": "90%",
@@ -74,12 +70,6 @@ export default {
         large: "1.5rem",
         xLarge: "3rem",
       },
-      backgroundImage: (theme) => ({
-        "custom-gradient": `linear-gradient(to bottom, ${theme(
-          "colors.blue_shade"
-        )}, ${theme("colors.off_blue")})`,
-      }),
-
       textShadow: {
         md: "2px 2px 2px rgba(0, 0, 0, 0.25)",
       },

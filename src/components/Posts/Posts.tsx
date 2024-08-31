@@ -27,7 +27,7 @@ const Posts = () => {
   return (
     <div>
       <h3>POSTS</h3>
-      <Card />
+      <Card posts={posts} />
     </div>
   );
 };

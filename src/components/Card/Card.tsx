@@ -9,24 +9,36 @@ import {
 import { useSelector } from "react-redux";
 import { selectPosts } from "../../utilities/redux/slices/postSlice";
 
-const Card = () => {
+const Card = ({ posts }) => {
   const [showLikes, setShowLikes] = useState(false);
   const [showComments, setShowComments] = useState(false);
-  const posts = useSelector(selectPosts);
+  const [visibleLikesPostId, setVisibleLikesPostId] = useState(null);
+  const [visibleCommentsPostId, setVisibleCommentsPostId] = useState(null);
+
+  const toggleLikes = (postId) => {
+    console.log("p id", postId);
+
+    setVisibleLikesPostId(visibleLikesPostId === postId ? null : postId);
+  };
+
+  const toggleComments = (postId) => {
+    setVisibleCommentsPostId(visibleCommentsPostId === postId ? null : postId);
+  };
 
   return (
     <>
-      <div className=" pt-6  text-white  w-full  rounded-xl  bg-clip-border text-gray-700 shadow-lg">
+      <div className=" pt-6  text-white  w-full  rounded-xl  text-gray-700  ">
         {/* Auther */}
         <div className=" gap-9 flex flex-wrap">
           {posts &&
             posts.map((post) => (
-              <div className=" bg-black w-[30%] rounded-md pt-4  ">
+              <div className="bg-black w-[100%] md:w-[45%] lg:w-[30%] rounded-md pt-4 border-2 border-purple-500 shadow-purple">
+
                 <div className="flex   justify-between mx-4">
                   <div className="flex items-center gap-4">
                     <div>
                       <img
-                        src={post.author.pfp}
+                        src={post.likes.author.pfp}
                         alt="avatar"
                         className="relative inline-block h-12 w-12 !rounded-full  object-cover object-center"
                       />
@@ -43,7 +55,11 @@ const Card = () => {
                 </div>
                 {/* Main Img */}
                 <div className="relative mx-4 mt-6 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
-                  <img src={post.images[0].url} alt="ui/ux review check" />
+                  <img
+                    src={post.images[0].url}
+                    className="h-[40vh] w-[100%] bg-auto"
+                    alt="ui/ux review check"
+                  />
 
                   <div className="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-tr from-transparent via-transparent to-black/60"></div>
                   {/* Like Button */}
@@ -68,16 +84,24 @@ const Card = () => {
 
                   <div className="inline-flex flex-wrap items-center gap-3 group">
                     <span
-                      className="flex items-center cursor-pointer rounded-full bg-gray-900/5 p-3 text-gray-900 transition-colors hover:bg-gray-900/10 group-hover:opacity-70"
-                      onClick={() => setShowLikes(!showLikes)}
+                      className="flex items-center cursor-pointer rounded-full bg-gray-900/5 p-3 text-gray-900 hover:bg-gray-900/10"
+                      onClick={() => {
+                        console.log(post.author.soconId);
+                        toggleLikes(post.author.soconId);
+                        // Add any additional logic you want to execute when soconId exists
+                      }}
                     >
                       <FaRegHeart className="w-5 h-5" />
+
                       <span className="ml-2 text-sm">{post.likes.count}</span>
                     </span>
 
                     <span
                       className="flex items-center cursor-pointer rounded-full bg-gray-900/5 p-3 text-gray-900 transition-colors hover:bg-gray-900/10 group-hover:opacity-70"
-                      onClick={() => setShowComments(!showComments)}
+                      onClick={() => {
+                        console.log(post.author.soconId);
+                        toggleComments(post.author.soconId);
+                      }}
                     >
                       <FaComment className="w-5 h-5" />
                       <span className="ml-2 text-sm">
@@ -94,7 +118,7 @@ const Card = () => {
                       <FaShare className="w-5 h-5" />
                       <span className="ml-2 text-sm">{post.shares}</span>
                     </span>
-                    {showLikes && (
+                    {/* {showLikes && (
                       <div className="text-sm text-gray-700">
                         <div className="flex items-center gap-4">
                           <div>
@@ -107,8 +131,21 @@ const Card = () => {
                           <div>@{post.likes.author.username}</div>
                         </div>
                       </div>
+                    )} */}
+                    {visibleLikesPostId === post.likes.author.soconId && (
+                      <div className="mt-2 text-sm text-gray-700">
+                        <div className="flex items-center gap-4">
+                          <img
+                            src={post.likes.author.pfp}
+                            alt="avatar"
+                            className="relative inline-block h-12 w-12 rounded-full object-cover object-center"
+                          />
+                          <div>@{post.likes.author.username}</div>
+                        </div>
+                      </div>
                     )}
-                    {showComments && (
+
+                    {/* {showComments && (
                       <div className="mt-2 text-sm text-gray-700">
                         <div className="flex items-center gap-4">
                           <div>
@@ -122,6 +159,43 @@ const Card = () => {
                           <div>{post.comments.comment.text}</div>
                           <div>{post.comments.comment.timestamp}</div>
                         </div>
+                      </div>
+                    )} */}
+                    {/* 
+                    {visibleCommentsPostId === post.likes.author.soconId && (
+                      <div className="mt-2 text-sm text-gray-700">
+                        {posts?.map((post) => (
+                          <div
+                            // key={comment.id}
+                            className="flex items-center gap-4"
+                          >
+                            <img
+                              src={post.comments.comment.author.pfp}
+                              alt="avatar"
+                              className="relative inline-block h-12 w-12 rounded-full object-cover object-center"
+                            />
+                            <div>@{post.comments.comment.author.username}</div>
+                            <div>{post.comments.comment.text}</div>
+                            <div>{post.comments.comment.timestamp}</div>
+                          </div>
+                        ))}
+                      </div>
+                    )} */}
+
+                    {visibleCommentsPostId === post.author.soconId && (
+                      <div className="mt-2 text-sm text-gray-700">
+                        {/* {post.comments.comment && ( */}
+                        <div className="flex items-center gap-4">
+                          <img
+                            src={post.comments.comment.author.pfp}
+                            alt="avatar"
+                            className="relative inline-block h-12 w-12 rounded-full object-cover object-center"
+                          />
+                          <div>@{post.comments.comment.author.username}</div>
+                          <div>{post.comments.comment.text}</div>
+                          <div>{post.comments.comment.timestamp}</div>
+                        </div>
+                        {/* )} */}
                       </div>
                     )}
                   </div>
