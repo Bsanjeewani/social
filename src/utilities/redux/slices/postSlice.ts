@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { RootState } from "../store/store";
 
 interface PostState {
   posts: any[];
@@ -41,3 +42,7 @@ const postsSlice = createSlice({
 });
 
 export default postsSlice.reducer;
+
+export const selectPosts = (state: RootState) => state.posts.posts;
+export const selectPostsStatus = (state: RootState) => state.posts.status;
+export const selectPostsError = (state: RootState) => state.posts.error;
