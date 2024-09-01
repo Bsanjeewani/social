@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
         <div>
           <img src={NotificationLogo} alt="Notifications" className="h-8" />
         </div>
-        <div></div>
+
         <div>
           <img
             src={avatar}
@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
             className="relative inline-block h-8 w-8 !rounded-full  object-cover object-center"
           />
         </div>
-        <div>{username}</div>
+        <div className="hidden md:block">{username}</div>
       </div>
     </nav>
   );

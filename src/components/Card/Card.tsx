@@ -79,7 +79,7 @@ const Card: React.FC<CardProps> = ({ posts }) => {
   };
 
   return (
-    <div className="p-6 w-full rounded-xl text-white">
+    <div className="md:p-6 p-4 w-full rounded-xl text-white">
       <div className="gap-9 flex justify-center flex-wrap">
         {posts.map((post) => {
           const likeCount = likePost[post.hash]
@@ -99,24 +99,26 @@ const Card: React.FC<CardProps> = ({ posts }) => {
                     <img
                       src={post.likes.author.pfp}
                       alt="avatar"
-                      className="relative inline-block h-12 w-12 !rounded-full object-cover object-center"
+                      className="relative inline-block h-10 w-10 md:h-12 md:w-12 !rounded-full object-cover object-center"
                     />
                   </div>
-                  <div>@{post.author.username}</div>
+                  <div className="md:text-md-1  text-sm">
+                    @{post.author.username}
+                  </div>
                 </div>
                 <div>
-                  <div className="mt-4">
+                  <div className="mt-4 md:text-md-1  text-sm">
                     {Math.floor(post.timestamp / 1440) % 10} days ago
                   </div>
                 </div>
               </div>
-              <div className="mx-4 font-sans text-start mt-4 text-base font-light text-gray-700">
+              <div className="mx-4 font-sans text-start mt-4 text-base font-light text-gray-700 ">
                 {post.text}
               </div>
               <div className="relative mx-4 mt-6 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
                 <img
                   src={post.images[0].url}
-                  className="h-[40vh] w-[100%] bg-auto"
+                  className="md:h-[40vh] w-[100%] bg-auto"
                   alt="post"
                 />
                 <div className="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-tr from-transparent via-transparent to-black/60"></div>
@@ -134,7 +136,7 @@ const Card: React.FC<CardProps> = ({ posts }) => {
                   </span>
                 </button>
               </div>
-              <div className="p-6">
+              <div className="md:p-6 pt-4 md:pt-0">
                 <div className="inline-flex flex-wrap items-center gap-3 group">
                   <span
                     className="flex items-center cursor-pointer rounded-full bg-gray-900/5 p-3 text-white hover:bg-gray-900/10"
@@ -160,12 +162,12 @@ const Card: React.FC<CardProps> = ({ posts }) => {
                   </span>
 
                   {showLikes[post.hash] && (
-                    <div className="mt-2 text-sm text-white">
+                    <div className="mt-2 ml-4 mb-2 md:ml-0 md:mb-0 text-sm text-white">
                       <div className="flex items-center gap-4">
                         <img
                           src={post.likes.author.pfp}
                           alt="avatar"
-                          className="relative inline-block h-12 w-12 rounded-full object-cover object-center"
+                          className="relative inline-block h-10 w-10 md:h-12 md:w-12 rounded-full object-cover object-center"
                         />
                         <div>@{post.likes.author.username}</div>
                       </div>
@@ -195,7 +197,7 @@ const Card: React.FC<CardProps> = ({ posts }) => {
                               [post.hash]: e.target.value,
                             }))
                           }
-                          className="w-full p-2 rounded-md text-black"
+                          className="w-full ml-4 md:ml-0 p-2 rounded-md text-black"
                         />
                         <button
                           onClick={() => handleComment(post.hash)}
@@ -208,14 +210,14 @@ const Card: React.FC<CardProps> = ({ posts }) => {
                         {comments.map((comment) => (
                           <div
                             key={comment.hash}
-                            className="mb-2 flex items-center"
+                            className="mb-2 flex ml-4  items-center"
                           >
                             <img
                               src={comment.author.pfp}
                               alt="avatar"
                               className="relative inline-block h-8 w-8 rounded-full object-cover object-center"
                             />
-                            <div className="ml-2 flex justify-between w-full">
+                            <div className="ml-2  flex justify-between w-full">
                               <div>
                                 <strong>@{comment.author.username}</strong>
                                 <p>{comment.text}</p>
