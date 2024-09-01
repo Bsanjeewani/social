@@ -35,8 +35,9 @@ During this project
 <li>Deployed website to Vercel</li>
 </ul>
 <br/>
+<img width="1469" alt="Desktop view " src="https://github.com/user-attachments/assets/13909e3b-9802-4261-8a63-255725aed3fd">
 
-<image src="https://drive.google.com/file/d/1JJwuIMadnECeB8ZbdIUP-Gik385l5A9G/view?usp=sharing" alt="desktop view-architecture" width=100%/>
+<image src="" alt="desktop view-architecture" width=100%/>
 <p align="center"><b>Desktop View</b></p>
 
 <br/>
@@ -80,7 +81,9 @@ During this project
 <p align="center"><b>Use Post reducer and user reducer for state management</b></p>
 <br/>
 
-<image src="https://drive.google.com/file/d/1bwY-tfgB1rfkyJTkYQUq4kCnbt-TaUcc/view?usp=sharing" alt="User-flow-on-website-for-signup-and-login.png" width=100%/>
+<image src="https://drive.google.com/file/d/1bwY-tfgB1rfkyJTkYQUq4kCnbt-TaUcc/view?usp=sharing"
+  
+  alt="User-flow-on-website-for-signup-and-login.png" width=100%/>
 <p align="center"><b>User flow on website state management using redux </b></p>
 
 <br/>
@@ -99,7 +102,7 @@ During this project
 ### Scope of work
 <ul>
 <li>Deployed the Social React app to Vercel</li>
-<li>Configured Vercel to support visiting any sub pages directly as React is a single page application</li>
+<li>Configured Vercel to support visiting any pages directly as React is a single-page application</li>
 </ul>
 
 ## How To Use
@@ -108,10 +111,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/yourusername/social-continent-timeline
+$ git clone https://github.com/Bsanjeewani/social
 
 # Go into the repository
-$ cd social-continent-timeline
+$ cd social
 
 # Install dependencies
 $ npm install
