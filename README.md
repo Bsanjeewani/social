@@ -35,14 +35,16 @@ During this project
 <li>Deployed website to Vercel</li>
 </ul>
 <br/>
-<img width="1469" alt="Desktop view " src="https://github.com/user-attachments/assets/13909e3b-9802-4261-8a63-255725aed3fd">
-
-
 <p align="center"><b>Desktop View</b></p>
+<img width="1469" alt="Desktop view " src="https://github.com/user-attachments/assets/13909e3b-9802-4261-8a63-255725aed3fd">
+<br/>
 
+<hr>
+<br/>
+<p align="center"><b>Mobile View (Responsive design)</b></p>
 <br/>
 <img width="333" alt="Responsive" src="https://github.com/user-attachments/assets/4068dd46-8282-4caa-841c-158bd92cdaa5">
-<p align="center"><b>Mobile View (Responsive design)</b></p>
+
 
 <br/>
 
@@ -63,13 +65,13 @@ During this project
 <br/>
 
 <hr>
+<br/>
 
 ## Comment feature
 ### Scope of work
 <ul>
-<li>Added Comment section, when clicked it has logic to  show comment dynamically fetch from API and also has feature to add user multiple comments and user username and avatar gets added and It is managed using redux state management</li>
+<li>Added Comment section, when clicked it has logic to  show comment dynamically fetch from API and also has a feature to add user multiple comments and user username and avatar gets added and It is managed using redux state management</li>
 </ul>
-<image src="https://drive.google.com/file/d/1dVmQxyCIL5qytdefr4IGQocM0kE3f9bo/view?usp=sharing" alt="Comment view" width=100%/>
 
 <img width="429" alt="comment " src="https://github.com/user-attachments/assets/775f6da9-1f77-4a99-b5f3-23657f08b99e">
 
@@ -79,7 +81,7 @@ During this project
 
 <hr>
 
-
+<br/>
 
 
 
@@ -87,12 +89,13 @@ During this project
 
 <p align="center"><b>Response cycle state management using Redux </b></p>
 <p align="center"><b>Use Post reducer and user reducer for state management</b></p>
+<p align="center"><b>User flow on website state management using redux </b></p>
 <br/>
 <img width="680" alt="redux" src="https://github.com/user-attachments/assets/386a601c-db14-48de-af3d-c5684d695c87">
 
   
-  alt="User-flow-on-website-for-signup-and-login.png" width=100%/>
-<p align="center"><b>User flow on website state management using redux </b></p>
+
+
 
 <br/>
 
@@ -101,7 +104,7 @@ During this project
 
 
 
-
+<br/>
 
 
 
