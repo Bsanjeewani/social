@@ -1,3 +1,4 @@
 import postReducer from "./postSlice";
+import userReducer from "./userSlice";
 
-export { postReducer };
+export { postReducer, userReducer };

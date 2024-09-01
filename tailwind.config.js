@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     colors: {
       black: "#110E18",
@@ -11,6 +8,7 @@ export default {
       purple: "#6E44FF",
       orange: "#FF8600",
       violet: "#2F2C38",
+      red: "#ff0000",
     },
     fontSize: {
       "2xl": "5rem",
