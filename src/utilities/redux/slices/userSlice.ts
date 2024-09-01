@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store/store";
 
@@ -12,6 +13,8 @@ const initialState: UserState = {
   username: "sanjeewani",
   avatar:
     "https://static.vecteezy.com/system/resources/previews/014/212/681/original/female-user-profile-avatar-is-a-woman-a-character-for-a-screen-saver-with-emotions-for-website-and-mobile-app-design-illustration-on-a-white-isolated-background-vector.jpg",
+  displayName: undefined,
+  soconId: undefined,
 };
 
 const userSlice = createSlice({
