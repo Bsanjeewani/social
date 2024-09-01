@@ -1,22 +1,17 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchPosts,
-  selectPosts,
-  selectPostsError,
-  selectPostsStatus,
+
+  // selectPostsError,
+  // selectPostsStatus,
 } from "../../utilities/redux/slices/postSlice";
-import { RootState } from "../../utilities/redux/store/store";
-import Card from "../Card/card";
+import { AppDispatch, RootState } from "../../utilities/redux/store/store";
+import Card from "../Card/Card";
 
 const Posts = () => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const postStatus = useSelector((state: RootState) => state.posts.status);
-  const posts = useSelector(selectPosts);
-  const status = useSelector(selectPostsStatus);
-  const error = useSelector(selectPostsError);
-
-  console.log("posts", posts);
 
   useEffect(() => {
     if (postStatus === "idle") {
@@ -26,7 +21,7 @@ const Posts = () => {
 
   return (
     <div className="mt-4">
-      <Card posts={posts} />
+      <Card />
     </div>
   );
 };

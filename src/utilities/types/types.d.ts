@@ -1,22 +1,41 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface User {
-  id: string;
+  soconId: number;
+  pfp: string;
+  display_name: string;
   username: string;
-  avatar: string;
+  rewardPoints?: number;
 }
 
 export interface Comment {
-  id: string;
-  content: string;
+  hash: string;
+  text: string;
+  timestamp: number;
+  type: number;
+  images: any[]; // Adjust if you have a specific type for images
   author: User;
 }
 
 export interface Post {
-  id: string;
-  content: string;
+  hash: string;
+  timestamp: number;
+  text: string;
+  isPrivate: boolean;
+  type: number;
+  hashtags: string[]; // Adjust if you have a specific type for hashtags
   author: User;
-  image?: string;
-  likes: number;
-  comments: Comment[];
+  isLiked: boolean;
+  isSaved: boolean;
+  isARepost: boolean;
+  images: { url: string; caption: string; type: number }[];
+  shares: number;
   reposts: number;
-  parentPost?: Post;
+  likes: {
+    count: number;
+    author: User;
+  };
+  comments: {
+    count: number;
+    comment: Comment;
+  };
 }

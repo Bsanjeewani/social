@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect } from "react";
 import {
   FaHeart,
@@ -8,13 +9,9 @@ import {
 } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../utilities/redux/slices/userSlice";
-import { Post } from "../../utilities/types/types";
+import { selectPosts } from "../../utilities/redux/slices/postSlice";
 
-interface CardProps {
-  posts: Post[];
-}
-
-const Card: React.FC<CardProps> = ({ posts }) => {
+const Card = () => {
   const [likePost, setLikePost] = useState<{ [key: string]: boolean }>({});
   const [showLikes, setShowLikes] = useState<{ [key: string]: boolean }>({});
   const [showComments, setShowComments] = useState<{ [key: string]: boolean }>(
@@ -24,7 +21,7 @@ const Card: React.FC<CardProps> = ({ posts }) => {
   const [commentsState, setCommentsState] = useState<{ [key: string]: any[] }>(
     {}
   );
-
+  const posts = useSelector(selectPosts);
   const user = useSelector(selectUser);
 
   useEffect(() => {
@@ -113,7 +110,10 @@ const Card: React.FC<CardProps> = ({ posts }) => {
                 </div>
               </div>
               <div className="mx-4 font-sans text-start mt-4 text-base font-light text-gray-700 ">
-                {post.text}
+                Worem ipsum dolor sit <span className="text-purple">#amet</span>
+                , consectetur adipiscing elit. Nunc vulputate libero et velit
+                interdum, ac aliquet odio{" "}
+                <span className="text-purple">#mattis</span>
               </div>
               <div className="relative mx-4 mt-6 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
                 <img
@@ -136,7 +136,7 @@ const Card: React.FC<CardProps> = ({ posts }) => {
                   </span>
                 </button>
               </div>
-              <div className="md:p-6 pt-4 md:pt-0">
+              <div className="md:p-6 pt-4 ">
                 <div className="inline-flex flex-wrap items-center gap-3 group">
                   <span
                     className="flex items-center cursor-pointer rounded-full bg-gray-900/5 p-3 text-white hover:bg-gray-900/10"
